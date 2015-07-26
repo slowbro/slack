@@ -59,7 +59,8 @@ class Client {
     }
 
     public function start(){
-        $ws = self::$slack->startRtm();
+        $slack = self::$slack;
+        $ws = $slack->startRtm();
         $loop = \React\EventLoop\Factory::create();
         $connector = new \Ratchet\Client\Factory($loop);
         $connector($ws)->then(
