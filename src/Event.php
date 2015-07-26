@@ -48,6 +48,7 @@ class Event {
         }
 
         $baseDir = Client::$eventdir;
+        echo __DIR__;
         //$baseDir = \Yii::getAlias("@slackbot/components/Slack/Event/".ucfirst($this->data->type).(isset($this->data->subtype)?'/'.ucfirst($this->data->subtype):''));
         if(!file_exists($baseDir)){
             $logger->debug("No actions for ".$this->data->type.(isset($this->data->subtype)?':'.$this->data->subtype:''));
@@ -61,7 +62,7 @@ class Event {
             try {
                 $action = new $class($this);
                 $action->run();
-            } catch (Exception $e){
+           } catch (Exception $e){
                 $logger->info("Unhandled Exception of type ".get_class($e).": ".$e->getMessage());
             } finally {
                 $action = null;
