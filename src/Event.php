@@ -47,7 +47,7 @@ class Event {
             return true;
         }
 
-        $baseDir = $this->slack->eventdir;
+        $baseDir = Slack::$eventdir;
         //$baseDir = \Yii::getAlias("@slackbot/components/Slack/Event/".ucfirst($this->data->type).(isset($this->data->subtype)?'/'.ucfirst($this->data->subtype):''));
         if(!file_exists($baseDir)){
             $logger->debug("No actions for ".$this->data->type.(isset($this->data->subtype)?':'.$this->data->subtype:''));
