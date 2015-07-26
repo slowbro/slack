@@ -21,7 +21,7 @@ class Client {
         self::$eventdir = $event_dir;
         $this->interactor = new CurlInteractor;
         $this->interactor->setResponseFactory(new SlackResponseFactory);
-        $this->commander = new Commander($this->apikey, $this->interactor);
+        $this->commander = new Commander(self::$apikey, $this->interactor);
     }
 
     public static function factory($overwrite=false, $api_key=false, $event_dir=false){
