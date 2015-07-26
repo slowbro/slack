@@ -52,7 +52,7 @@ class Event {
         $internalDir = __DIR__.'/Event/'.$suffix;
         $eventDir = Client::$eventdir.'/'.$suffix;
         //$baseDir = \Yii::getAlias("@slackbot/components/Slack/Event/".ucfirst($this->data->type).(isset($this->data->subtype)?'/'.ucfirst($this->data->subtype):''));
-        if(!file_exists($intrnalDir.'/InitAction.php')){
+        if(!file_exists($internalDir.'/InitAction.php')){
             $logger->debug("[internal] No actions for ".$this->data->type.(isset($this->data->subtype)?':'.$this->data->subtype:''));
             $logger->debug($messageJson);
             return false;
