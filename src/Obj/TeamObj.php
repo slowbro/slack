@@ -1,4 +1,4 @@
-<?php namespace \Slowbro\Slack\Obj;
+<?php namespace Slowbro\Slack\Obj;
 
 class TeamObj extends \Slowbro\Slack\Base\Obj {
 

@@ -1,4 +1,4 @@
-<?php namespace \Slowbro\Slack\Obj;
+<?php namespace Slowbro\Slack\Obj;
 
 use \Slowbro\Slack\State;
 

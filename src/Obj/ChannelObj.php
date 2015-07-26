@@ -1,4 +1,4 @@
-<?php namespace \Slowbro\Slack\Obj;
+<?php namespace Slowbro\Slack\Obj;
 
 class ChannelObj extends \Slowbro\Slack\Base\Room {
 
