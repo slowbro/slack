@@ -1,0 +1,21 @@
+{
+    "name": "slowbro/slack-rtm",
+    "description": "An event-based Slack RTM implementation in PHP, based on events received from the Slack RTM API.",
+    "keywords": ["slack"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Katelyn Schiesser",
+            "email": "katelyn.schiesser@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Slowbro\\Slack\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
