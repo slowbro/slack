@@ -1,6 +1,6 @@
-<?php namespace Slack\Event\Message;
+<?php namespace Slowbro\Slack\Event\Message;
 
-class InitEventAction extends DefaultEventAction {
+class InitAction extends BaseAction {
 
     public function run(){
         $logger = $this->slack->getLogger();

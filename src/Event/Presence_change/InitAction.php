@@ -1,6 +1,8 @@
-<?php namespace Slack\Event\Presence_change;
+<?php namespace Slowbro\Slack\Event\Presence_change;
 
-class InitEventAction extends \Slack\Event\EventAction {
+use \Slowbro\Slack\Event\Action;
+
+class InitAction extends Action {
 
     public function run(){
         $user = $this->state->findUserById($this->event->user);

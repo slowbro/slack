@@ -1,6 +1,8 @@
-<?php namespace Slack\Event\User_change;
+<?php namespace Slowbro\Slack\Event\User_change;
 
-class InitEventAction extends \Slack\Event\EventAction {
+use \Slowbro\Slack\Event\Action;
+
+class InitAction extends Action {
 
     public function run(){
         $newdata = $this->event->user;

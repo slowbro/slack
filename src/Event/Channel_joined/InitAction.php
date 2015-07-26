@@ -1,6 +1,8 @@
-<?php namespace Slack\Event\Channel_joined;
+<?php namespace Slowbro\Slack\Event\Channel_joined;
 
-class InitEventAction extends \Slack\Event\EventAction {
+use \Slowbro\Slack\Event\Action;
+
+class InitAction extends Action {
 
     public function run(){
         $channel = $this->event->channel;

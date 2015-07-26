@@ -1,6 +1,8 @@
-<?php namespace Slack\Event\Hello;
+<?php namespace Slowbro\Slack\Event\Hello;
 
-class InitEventAction extends \Slack\Event\EventAction {
+use \Slowbro\Slack\Event\Action;
+
+class InitAction extends Action {
 
     public function run(){
         $logger = $this->slack->getLogger();

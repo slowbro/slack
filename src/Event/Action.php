@@ -1,9 +1,9 @@
-<?php namespace Slack\Event;
+<?php namespace Slowbro\Slack\Event;
 
-use Slack\Slack;
-use Slack\SlackState;
+use Slowbro\Slack\Client;
+use Slowbro\Slack\State;
 
-class EventAction {
+class Action {
 
     protected $event;
     protected $slack;
@@ -12,8 +12,8 @@ class EventAction {
 
     public function __construct($event){
         $this->event = $event;
-        $this->slack = Slack::factory();
-        $this->state = SlackState::getState();
+        $this->slack = Client::factory();
+        $this->state = State::getState();
     }
 
     public function run(){

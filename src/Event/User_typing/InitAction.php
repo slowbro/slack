@@ -1,6 +1,8 @@
-<?php namespace Slack\Event\User_typing;
+<?php namespace Slowbro\Slack\Event\User_typing;
 
-class InitEventAction extends \Slack\Event\EventAction {
+use \Slowbro\Slack\Event\Action;
+
+class InitAction extends Action {
 
     public function run(){
         $user = $this->state->findUserById($this->event->user);

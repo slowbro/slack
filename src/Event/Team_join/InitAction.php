@@ -1,6 +1,8 @@
-<?php namespace Slack\Event\Team_join;
+<?php namespace Slowbro\Slack\Event\Team_join;
 
-class InitEventAction extends \Slack\Event\EventAction {
+use \Slowbro\Slack\Event\Action;
+
+class InitAction extends Action {
 
     public function run(){
         $new_user = $this->event->user;

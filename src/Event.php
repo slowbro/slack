@@ -47,18 +47,17 @@ class Event {
             return true;
         }
 
-        $baseDir = Client::$eventdir;
-        echo __DIR__;
+        $suffix = ucfirst($this->data->type).(isset($this->data->subtype)?'/'.ucfirst($this->data->subtype):'');
+
+        $internalDir = __DIR__.'/Event/'.$suffix;
+        $eventDir = Client::$eventdir.'/'.$suffix;
         //$baseDir = \Yii::getAlias("@slackbot/components/Slack/Event/".ucfirst($this->data->type).(isset($this->data->subtype)?'/'.ucfirst($this->data->subtype):''));
-        if(!file_exists($baseDir)){
-            $logger->debug("No actions for ".$this->data->type.(isset($this->data->subtype)?':'.$this->data->subtype:''));
+        if(!file_exists($intrnalDir.'/InitAction.php')){
+            $logger->debug("[internal] No actions for ".$this->data->type.(isset($this->data->subtype)?':'.$this->data->subtype:''));
             $logger->debug($messageJson);
             return false;
-        }
-
-        # do init first
-        if(file_exists($baseDir.'/InitEventAction.php')){
-            $class = "Slack\Event\\".ucfirst($this->data->type).(isset($this->data->subtype)?'\\'.ucfirst($this->data->subtype):'')."\InitEventAction";
+        } else {
+            $class = "\Slowbro\Slack\Event\\".ucfirst($this->data->type).(isset($this->data->subtype)?'\\'.ucfirst($this->data->subtype):'')."\InitAction";
             try {
                 $action = new $class($this);
                 $action->run();
@@ -71,13 +70,13 @@ class Event {
 
         # now do the rest
         # load the classes first so we can sort them...
-        $classes = glob($baseDir."/*EventAction.php");
+        $classes = glob($eventDir."/*Action.php");
         $class_array = [];
         foreach($classes as $name){
             $name = str_replace($baseDir.'/', '', str_replace('.php','',$name));
-            if(in_array($name,["InitEventAction", "DefaultEventAction"]))
+            if(in_array($name,["DefaultAction"]))
                 continue;
-            $class = "Slack\Event\\".ucfirst($this->data->type)."\\$name";
+            $class = "Event\\".ucfirst($this->data->type)."\\$name";
             $class_array[] = ['class'=>$class,'sort'=>$class::$sort];
         }
         usort($class_array, function($a,$b){return $a['sort']-$b['sort'];});

@@ -1,6 +1,8 @@
-<?php namespace Slack\Event\Channel_created;
+<?php namespace Slowbro\Slack\Event\Channel_created;
 
-class InitEventAction extends \Slack\Event\EventAction {
+use \Slowbro\Slack\Event\Action;
+
+class InitAction extends Action {
 
     protected $trigger = false;
 
