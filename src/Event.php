@@ -10,7 +10,7 @@ class Event {
 
     public function __construct(){
         $this->init_time = microtime(true);
-        $this->slack  = Slack::factory();
+        $this->slack  = Client::factory();
     }
 
     public function __set($name, $value){
