@@ -1,5 +1,5 @@
 {
-    "name": "slowbro/slack-rtm",
+    "name": "slowbro/slack",
     "description": "An event-based Slack RTM implementation in PHP, based on events received from the Slack RTM API.",
     "keywords": ["slack"],
     "license": "MIT",
