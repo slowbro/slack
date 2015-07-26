@@ -1,8 +1,8 @@
-<?php namespace \Slowbro\Slack\Object;
+<?php namespace \Slowbro\Slack\Obj;
 
 use \Slowbro\Slack\State;
 
-class UserObject extends \Slowbro\Slack\Base\Object {
+class UserObj extends \Slowbro\Slack\Base\Obj {
 
     public $id;
     public $name;
@@ -34,7 +34,7 @@ class UserObject extends \Slowbro\Slack\Base\Object {
         $state = State::getState();
         $im = $state->findImByUser($this->id);
         if(!$im){
-            $im = new ImObject;
+            $im = new ImObj;
             $im->open($this->id);
         }
         $im->message($text);

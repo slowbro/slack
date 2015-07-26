@@ -1,6 +1,6 @@
-<?php namespace \Slowbro\Slack\Object;
+<?php namespace \Slowbro\Slack\Obj;
 
-class GroupObject extends \Slowbro\Slack\Base\Room {
+class GroupObj extends \Slowbro\Slack\Base\Room {
 
     public $id;
     public $name;

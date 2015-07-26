@@ -1,6 +1,6 @@
 <?php namespace \Slowbro\Slack\Base;
 
-class Object {
+class Obj {
 
     public function __construct($itemArray=[]){
         if($itemArray)

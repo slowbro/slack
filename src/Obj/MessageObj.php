@@ -1,8 +1,8 @@
-<?php namespace \Slowbro\Slack\Object;
+<?php namespace \Slowbro\Slack\Obj;
 
 use \Slowbro\Slack\State;
 
-class MessageObject extends \Slowbro\Slack\Base\Object {
+class MessageObj extends \Slowbro\Slack\Base\Obj {
 
     const TYPE_CHANNEL = '#';
     const TYPE_GROUP   = '&';
