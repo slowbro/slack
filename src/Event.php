@@ -76,7 +76,7 @@ class Event {
             $name = str_replace($eventDir.'/', '', str_replace('.php','',$name));
             if(in_array($name,["DefaultAction"]))
                 continue;
-            $class = "Event\\".ucfirst($this->data->type)."\\$name";
+            $class = "\\Event\\".ucfirst($this->data->type)."\\$name";
             $class_array[] = ['class'=>$class,'sort'=>$class::$sort];
         }
         usort($class_array, function($a,$b){return $a['sort']-$b['sort'];});
