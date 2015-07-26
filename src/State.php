@@ -6,6 +6,7 @@ use \Slowbro\Slack\Obj\ChannelObj;
 use \Slowbro\Slack\Obj\UserObj;
 use \Slowbro\Slack\Obj\GroupObj;
 use \Slowbro\Slack\Obj\ImObj;
+use \Slowbro\Slack\Obj\BotObj;
 
 class State {
 
@@ -58,7 +59,7 @@ class State {
      **/
 
     public function addBot($bot){
-        $chan = new SlackBot($bot);
+        $chan = new BotObj($bot);
         $this->bots[] = $chan;
         return $chan;
     }
@@ -93,7 +94,7 @@ class State {
      **/
 
     public function addChannel($channel){
-        $chan = new SlackChannel($channel);
+        $chan = new ChannelObj($channel);
         $this->channels[] = $chan;
         return $chan;
     }
