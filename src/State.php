@@ -1,11 +1,11 @@
 <?php namespace Slowbro\Slack;
 
-use \Slowbro\Slack\Object\SelfObject;
-use \Slowbro\Slack\Object\TeamObject;
-use \Slowbro\Slack\Object\ChannelObject;
-use \Slowbro\Slack\Object\UserObject;
-use \Slowbro\Slack\Object\GroupObject;
-use \Slowbro\Slack\Object\ImObject;
+use \Slowbro\Slack\Obj\SelfObj;
+use \Slowbro\Slack\Obj\TeamObj;
+use \Slowbro\Slack\Obj\ChannelObj;
+use \Slowbro\Slack\Obj\UserObj;
+use \Slowbro\Slack\Obj\GroupObj;
+use \Slowbro\Slack\Obj\ImObj;
 
 class State {
 
@@ -24,8 +24,8 @@ class State {
 
     public function __construct($initialState){
         $this->url  = $initialState['url'];
-        $this->self = new SelfObject($initialState['self']);
-        $this->team = new TeamObject($initialState['team']);
+        $this->self = new SelfObj($initialState['self']);
+        $this->team = new TeamObj($initialState['team']);
         
         foreach($initialState['bots'] as $bot){
             $this->addBot($bot);
@@ -128,7 +128,7 @@ class State {
      **/
 
     public function addGroup($group){
-        $grp = new GroupObject($group);
+        $grp = new GroupObj($group);
         $this->groups[] = $grp;
         return $grp;
     }
@@ -173,10 +173,10 @@ class State {
      **/
 
     public function addIm($im){
-        if($im instanceof ImObject){
+        if($im instanceof ImObj){
             $imm = $im;
         } else {
-            $imm = new ImObject($im);
+            $imm = new ImObj($im);
         }
         $this->ims[] = $imm;
         return $imm;
@@ -213,7 +213,7 @@ class State {
      **/
 
     public function addUser($user){
-        $usr = new UserObject($user);
+        $usr = new UserObj($user);
         $this->users[] = $usr;
         return $usr;
     }
