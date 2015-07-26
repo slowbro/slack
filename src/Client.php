@@ -48,7 +48,7 @@ class Client {
 
     public function startRtm(){
         $rtm = $this->execute('rtm.start');
-        $state = new SlackState($rtm['body']);
+        $state = new State($rtm['body']);
         return $state->url;
     }
 
@@ -67,7 +67,7 @@ class Client {
                 $slack->setConnection($conn);
 
                 $conn->on("message", function($message){
-                    $event = new SlackEvent;
+                    $event = new Event;
                     $event->parse($message);
                 });
             },
