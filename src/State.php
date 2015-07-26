@@ -1,9 +1,11 @@
 <?php namespace Slowbro\Slack;
 
-use \Slowbro\Slack\Type\TypeSelf;
-use \Slowbro\Slack\Type\TypeTeam;
-use \Slowbro\Slack\Type\TypeChannel;
-use \Slowbro\Slack\Type\TypeUser;
+use \Slowbro\Slack\Object\SelfObject;
+use \Slowbro\Slack\Object\TeamObject;
+use \Slowbro\Slack\Object\ChannelObject;
+use \Slowbro\Slack\Object\UserObject;
+use \Slowbro\Slack\Object\GroupObject;
+use \Slowbro\Slack\Object\ImObject;
 
 class State {
 
@@ -22,8 +24,8 @@ class State {
 
     public function __construct($initialState){
         $this->url  = $initialState['url'];
-        $this->self = new TypeSelf($initialState['self']);
-        $this->team = new TypeTeam($initialState['team']);
+        $this->self = new SelfObject($initialState['self']);
+        $this->team = new TeamObject($initialState['team']);
         
         foreach($initialState['bots'] as $bot){
             $this->addBot($bot);
@@ -126,7 +128,7 @@ class State {
      **/
 
     public function addGroup($group){
-        $grp = new SlackGroup($group);
+        $grp = new GroupObject($group);
         $this->groups[] = $grp;
         return $grp;
     }
@@ -171,10 +173,10 @@ class State {
      **/
 
     public function addIm($im){
-        if($im instanceof \Slack\SlackIm){
+        if($im instanceof ImObject){
             $imm = $im;
         } else {
-            $imm = new SlackIm($im);
+            $imm = new ImObject($im);
         }
         $this->ims[] = $imm;
         return $imm;
@@ -211,7 +213,7 @@ class State {
      **/
 
     public function addUser($user){
-        $usr = new SlackUser($user);
+        $usr = new UserObject($user);
         $this->users[] = $usr;
         return $usr;
     }
