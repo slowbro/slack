@@ -1,4 +1,4 @@
-<?php namespace \Slowbro\Slack;
+<?php namespace Slowbro\Slack;
 
 class Event {
 
