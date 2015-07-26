@@ -113,7 +113,7 @@ class MessageObj extends \Slowbro\Slack\Base\Obj {
     }
 
     public function reply($text, $namePrefix=true){
-        $message = new Message;
+        $message = new MessageObj;
         if($this->getChannelType() === self::TYPE_IM)
             $namePrefix = false;
         if($namePrefix){
