@@ -73,7 +73,7 @@ class Event {
         $classes = glob($eventDir."/*Action.php");
         $class_array = [];
         foreach($classes as $name){
-            $name = str_replace($baseDir.'/', '', str_replace('.php','',$name));
+            $name = str_replace($eventDir.'/', '', str_replace('.php','',$name));
             if(in_array($name,["DefaultAction"]))
                 continue;
             $class = "Event\\".ucfirst($this->data->type)."\\$name";
