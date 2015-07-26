@@ -1,4 +1,4 @@
-<?php namespace Slack\Exception;
+<?php namespace Slowbro\Slack\Exception;
 
 class SkipActionException extends \Exception {
 
