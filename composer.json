@@ -15,7 +15,7 @@
         "frlnc/php-slack": "dev-master",
         "ratchet/pawl": "dev-master",
         "zendframework/zend-log": "2.3.*",
-        "react/socket-client": "dev-master"
+        "react/socket-client": "0.4.3"
     },
     "autoload": {
         "psr-4": {
