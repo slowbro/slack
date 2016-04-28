@@ -63,7 +63,7 @@ class Client {
         $logger = $this->getLogger();
         $ws = $slack->startRtm();
         $loop = \React\EventLoop\Factory::create();
-        $connector = new \Ratchet\Client\Factory($loop);
+        $connector = new \Ratchet\Client\Connector($loop);
         $connector($ws)->then(
             function(\Ratchet\Client\WebSocket $conn) use ($slack){
                 $slack->setConnection($conn);
