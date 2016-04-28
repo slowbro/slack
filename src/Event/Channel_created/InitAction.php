@@ -8,7 +8,7 @@ class InitAction extends Action {
 
     public function run(){
         $channel = $this->state->addChannel($this->event->asJson());
-        $this->slack->logger->info("New channel created: {$channel->name}");
+        $this->slack->getLogger()->info("New channel created: {$channel->name}");
     }
 
 }
