@@ -10,7 +10,12 @@
         }
     ],
     "require": {
-        "php": ">=5.4.0"
+        "php": ">=5.4.0",
+        "react/stream": "0.4.3",
+        "frlnc/php-slack": "dev-master",
+        "ratchet/pawl": "dev-master",
+        "zendframework/zend-log": "2.3.*",
+        "react/socket-client": "dev-master"
     },
     "autoload": {
         "psr-4": {
