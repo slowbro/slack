@@ -42,7 +42,7 @@ class Event {
         }
 
         if(!isset($this->data->type)){
-            if($this->data->ok == false)
+            if(!isset($this->data->ok) || $this->data->ok == false)
                 var_dump($this->data);
             return true;
         }
