@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "react/stream": "0.4.3",
+        "react/stream": "dev-master as 0.4.3",
         "frlnc/php-slack": "dev-master",
         "ratchet/pawl": "dev-master",
         "zendframework/zend-log": "2.3.*",
