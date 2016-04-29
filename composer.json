@@ -11,11 +11,11 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "react/stream": "dev-master as 0.4.3",
+        "react/stream": "0.4.*",
         "frlnc/php-slack": "dev-master",
-        "ratchet/pawl": "dev-master",
+        "ratchet/pawl": "0.2.*",
         "zendframework/zend-log": "2.3.*",
-        "react/socket-client": "0.4.3"
+        "react/socket-client": "0.4.*"
     },
     "autoload": {
         "psr-4": {
