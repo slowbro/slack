@@ -37,14 +37,14 @@ class Event {
         $logger = $this->slack->getLogger();
         $this->data = json_decode($messageJson);
         if(!$this->data){
-            $logger->error("Received invalid message: $messageJson");
+            $logger->err("Received invalid message: $messageJson");
             return false;
         }
 
         if(!isset($this->data->type)){
             if(!isset($this->data->ok) || $this->data->ok == false)
                 var_dump($this->data);
-            $logger->error("Got empty message from Slack: $messageJson");
+            $logger->err("Got empty message from Slack: $messageJson");
             return true;
         }
 
