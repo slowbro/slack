@@ -44,6 +44,7 @@ class Event {
         if(!isset($this->data->type)){
             if(!isset($this->data->ok) || $this->data->ok == false)
                 var_dump($this->data);
+            $logger->error("Got empty message from Slack: $messageJson");
             return true;
         }
 
