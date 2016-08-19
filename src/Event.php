@@ -42,9 +42,9 @@ class Event {
         }
 
         if(!isset($this->data->type)){
-            if(!isset($this->data->ok) || $this->data->ok == false)
-                var_dump($this->data);
-            $logger->err("Got empty message from Slack: $messageJson");
+            if(!isset($this->data->ok) || $this->data->ok == false){
+                $logger->err("Got a bad message from Slack: $messageJson");
+            }
             return true;
         }
 
